@@ -1,8 +1,12 @@
 
-name: Albion Discord Test
+name: Albion Daily Production Bonus
 
 on:
   workflow_dispatch:
+
+  schedule:
+    - cron: '30 23 * * *'
+      timezone: 'Asia/Ho_Chi_Minh'
 
 permissions:
   contents: read
@@ -20,7 +24,7 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Send Discord notification
+      - name: Send Daily Production Bonus
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: node send-discord.js
