@@ -3,10 +3,8 @@ name: Albion Daily Production Bonus
 
 on:
   workflow_dispatch:
-
   schedule:
-  - cron: '45 23 * * *'
-      timezone: 'Asia/Ho_Chi_Minh'
+    - cron: '45 23 * * *'
 
 permissions:
   contents: read
